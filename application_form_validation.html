@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Students Application form validation </title>
+
+    <script language='javascript'>
+
+        function printErr(id, errorMsg)
+        {  
+            document.getElementById(id).innerHTML = errorMsg
+        }
+
+        function validateForm()
+        {
+            let appli_num = document.studentApp.appnum.value
+            let username = document.studentApp.name.value
+            let contact_num = document.studentApp.phone.value
+            let course_fee = document.studentApp.fees.value
+ 
+            let appNumErr = usernameErr = contactErr = feeErr = true
+ 
+  
+            //application number
+            if (appli_num == null || appli_num == "")
+            {
+                printErr("appNumError", "Enter your application number")
+            }
+            else if ((appli_num).length < 3)
+            {
+                printErr("appNumError", "Your Application number should be minimum 3 digits")
+            }
+            else if (isNaN(appli_num))
+            {
+                printErr("appNumError", "Enter numeric values only")
+            }
+            else
+            {
+                printErr("appNumError", "")
+                appNumErr = false
+            }
+ 
+ 
+            //username
+            if(username == null || username == "")
+            {
+                printErr("nameError", "Enter your name")
+            }
+            else if(username.length < 6 )
+            {
+                printErr("nameError", "User name cannot be less than 6 alphabets")
+            }
+            else
+            {
+                printErr("nameError", "")
+                usernameErr = false
+            }
+ 
+ 
+            //contact number
+            if(contact_num == null || contact_num == "")
+            {
+                printErr("numError", "Enter your phone number")
+            }
+            else if (isNaN(contact_num))
+            {
+                printErr("numError", "Enter numeric values only")
+            }
+            else if((contact_num).length != 10)
+            {
+                printErr("numError", "Phone number must be 10 digits")
+            }
+            else
+            {
+                printErr("numError", "")
+                contactErr = false
+            }
+ 
+ 
+            //fees validation
+            if(course_fee == null || course_fee == "")
+            {
+                printErr("feeError", "Fees section cannot be empty")
+            }
+            else if(course_fee > 5000)
+            {
+                printErr("feeError", "Fees section cannot be more than 5000")
+            }
+            else if (isNaN(course_fee))
+            {
+                printErr("feeError", "Enter numeric values only")
+            }
+            else
+            {
+                printErr("feeError", "")
+                feeErr = false
+            }
+ 
+            if((appNumErr || usernameErr || contactErr || feeErr) == true )
+            {
+                return false
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        body
+        {
+            text-align: center;
+            background-image: url('background.jpg');
+		    background-repeat: no-repeat;
+		    background-size: cover;
+        }
+
+        .form
+        {
+            border: solid black 3px;
+            border-radius: 1rem;
+            padding: 30px;
+            margin: 2% 30% 0% 30%;
+            background-color:rgba(255,255,255,0.5);
+            font-size: medium;
+        }
+
+        label
+        {
+            font-size:1rem;
+        }
+
+        .form input
+        {
+            padding: 7px;
+            margin: 5px;
+            width: fit-content;
+            border-radius: 0.25rem;
+        }
+
+        .error
+        {
+            color: red;
+            font-size: 0.865rem;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        h1
+        {
+            color: #00124b;
+            text-align: center;
+        }
+
+        select{
+            padding: 8px;
+            font-weight: bold;
+            border: 2px solid black;
+            border-radius: 0.25rem;
+        }
+
+        option.duration
+        {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        textarea
+        {
+            border-radius: 0.25rem;
+            border: 2px solid black;
+            resize: none;
+        }
+
+        button
+        {
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: white;
+        }
+
+        button:hover
+        {
+            color: white;
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br>
+    <h1><b>Students Application Form</b></h1>
+	
+    <form class='form' name='studentApp'><br>
+
+    <div class="formsection">
+    <label><b>Application number:</b>
+    <input type='text' id='appnum' name='appnum' placeholder='eg: 12345' autocomplete="on"> 
+    </label>
+    <div class="error" id="appNumError"></div>
+    </div><br>
+
+    <div class="formsection">
+    <label><b>Student name:</b>
+    <input type='text' id='name' name='name' placeholder='Enter your Name' autocomplete="on">
+    </label>
+    <div class="error" id="nameError"></div>
+    </div><br>
+
+    <div class="formsection">
+    <label><b>Address:</b> &nbsp;
+    <textarea id='address' rows='2' col='11' autocomplete="on"> Add your address</textarea>
+    </label>
+    <div class="error" id="addError"></div>
+    </div><br>
+
+    <div class="formsection">
+    <label><b>Phone Number:</b>
+    <input type="text" id="phone" name="phone" placeholder="eg: 1234567890" autocomplete="on">
+    </label>
+    <div class="error" id="numError"></div>
+    </div><br>
+
+    <div class="formsection">
+    <label><b>Course:</b>
+    <input type="text" id="course" name="course" placeholder="eg: web development" autocomplete="on">
+    </label>
+    <div class="error" id="courseError"></div>
+    </div><br>
+	
+    <div class="formsection">
+	<label><b>Duration:</b>
+    <select name='duration' id='duration' autocomplete="on">
+    <option class='duration'>Duration of course</option>
+    <option class='duration'>3 months</option>
+    <option class='duration'>6 months</option>
+    <option class='duration'>12 months</option>
+    </select>
+    </label>
+    </div><br>
+
+    <div class="formsection">
+    <label><b>Fees:</b>
+    <input type="text" id="fees" name="fees" placeholder="eg: 1234" autocomplete="on">
+    </label>
+    <div class="error" id="feeError"></div>
+    </div><br><br>
+
+    <button type="submit" value="Submit" onclick="return validateForm()">Submit</button>&nbsp;&nbsp;
+    <button type="reset" value="Reset">Reset</button>
+	
+</form>
+
+</body>
+</html>
