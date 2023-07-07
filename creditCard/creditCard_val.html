@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Credit Card Validation</title>
+	 
+	 <script language="javascript">
+	 
+	 function printErr(errId, errMsg)
+	 {
+	     document.getElementById(errId).innerHTML = errMsg
+	 }
+	 
+	 function ccValidate(ccNum)
+	 {
+	     //regular expression for ccNum
+	     let regex = /^[0-9]+$/
+		 
+		 //to check if the number already present --> part 1
+		 let sameNumErr = false
+		 for(let i = 0; i < ccNum.length; i++)
+		 {
+		     if(ccNum[0] != ccNum[i])
+			 {
+			     sameNumErr = false
+				 break
+			 }
+			 else
+			 {
+			     sameNumErr = true
+			 }
+		 }
+		 
+		 //to check if sum is less than 16 --> part 1
+		 let sum = 0
+		 for(let i = 0; i < ccNum.length; i++)
+		 {
+		     sum += ccNum[i]
+		 }
+		 
+		 //final checking
+		 
+		 //check if empty
+		 if(ccNum == "" || ccNum == null)
+		 printErr("errorMsg","<br>Please enter your credit card number")
+		 
+		 //check the length if it is less than 16
+		 else if(ccNum.length != 16) 
+		 printErr("errorMsg","<br>Must contain total 16 numbers.")
+		 
+		 //check for characters
+		 else if(regex.test(ccNum) === false)
+		 printErr("errorMsg","<br>Invalid characters! must contain only Digits.")
+ 
+         //to check if same number --> part 2 
+		 else if(sameNumErr == true)
+		 printErr("errorMsg","<br>Repeated Number! This number is already registered by some other member")
+		
+		 //to check if sum number is less than 16 --> part 2
+		 else if(sum < 16 )
+		 printErr("errorMsg","<br>sum of numbers should be 16.")
+		 
+		 //to check if last number is odd
+		 else if(ccNum[ccNum.length - 1] % 2 != 0)
+		 printErr("errorMsg","<br>Last number cannot be odd.")
+		 
+		 else {
+		 printErr("errorMsg","")
+		 }
+		 
+	 }
+	 
+	 </script>
+	 
+	 <style type="text/css">
+	 
+	 body {
+	     align-items:center;
+		 font-family:helvetica;
+		 display:flex;
+		 flex-direction:column;
+	 }
+	 
+	 .container {
+	     background-color: rgba(72, 72, 247);
+		 border:2px solid black;
+		 border-radius:2rem;
+		 width:36rem;
+		 height:22rem;
+		 display:flex;
+		 flex-direction:column;
+		 align-items:center;
+		 justify-content:space-around;
+	 }
+	
+	 h1, h3, p {
+		 color:white;
+	 }
+	 
+	 .Num_box {
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+	 }
+	 
+	 .Num_box #ccNum {
+		width:25rem;
+		min-height:0.5rem;
+		font-size:2rem;
+		text-align:center;
+		border:1px solid black;
+		border-radius: 5px;
+		padding: 4px;
+	 }
+	
+	 .Num_box #errorMsg {
+		color:red;
+		font-size:1rem;
+		font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	 }
+	
+	 .other_info {
+		display:flex;
+	 }
+	
+	 .bottom {
+		background-color:transparent;
+		border:none;
+	 }
+	
+	 input:focus{
+		color:black;
+		outline:1px solid white;
+	 }
+	
+	 button {
+		margin-top:1rem;
+		background-color:white;
+		border-radius:0.5rem;
+		border:2px solid blue;
+		padding:15px;
+		font-weight:bold;
+		font-size: medium;
+	 }
+	
+	 button:hover {
+		color:white;
+		background-color:blue;
+	 }
+
+	 ::placeholder
+	 {
+        color:black;
+	 }
+	 </style>
+</head>
+
+<body>
+     <br><br>
+     <div class="container">
+          <h1>CREDIT CARD</h1>
+		  
+		  <div class="Num_box">
+	      <h3>Enter Card Number : </h3>
+		  <input type="number" name="number" id="ccNum">
+		  <p id="errorMsg"></p>
+		  </div><br><br>
+		  
+		  <div class="other_info">
+		       <p>Name : </p>
+		       <input type="text" name="name" class="bottom" placeholder=" Holder's Name">
+			   
+			   <p>Expiry Date : </p>
+			   <input type="date" name="date" class="bottom">
+		  </div>
+		  <br>
+	 </div>
+	 <br>
+	 
+	 <button  onclick="ccValidate(ccNum.value)">Check</button>
+     
+</body>
+</html>
