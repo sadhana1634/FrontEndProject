@@ -1,0 +1,41 @@
+
+@keyframes mymove {
+    from {
+        background-position-y: (1000px);
+    }
+
+    to {
+        background-position-y: (0px);
+    }
+}
+
+@keyframes orbitRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes planetRotateFirst {
+    0% {
+        transform: translate(0, -40px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, -40px) rotate(360deg);
+    }
+}
+
+@keyframes planetRotateSecond {
+    0% {
+        transform: translate(0, 40px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 40px) rotate(360deg);
+    }
+}
+
