@@ -1,0 +1,303 @@
+.banner {
+    .for-background {
+        .title-icons {
+            .education {
+                .icon-1  {
+                    .color-icon {
+                        background-color: $secondaryColor;
+                    }
+                }
+
+                .icon-2  {
+                    .two-squares-icon {
+                        background-color: $tertiaryColor;
+                    }
+                }
+            }
+
+            .title {
+                p {
+                    font-weight: 500;
+                    font-size: 45px;
+                    line-height: 55px;
+                    margin-bottom: 0;
+
+                    span {
+                        background-color: $primaryColor;
+                        padding: 0px 15px;
+                        border-radius: 35px;
+                        color: $colorDark;
+                        transition: $transition;
+                        animation: magicText 4s infinite linear;
+                    }
+                }
+            }
+
+            .icon-button {
+                .icon-3 {
+                    .sunset-icon {
+                        background-color: $primaryColor;
+                    }
+                }
+
+                .icon-4 {
+                    .down-arrow-icon {
+                        background-color: $colorLight;
+                        border: 1px solid $tertiaryColor;
+                    }
+                }
+
+                .button {
+                    a {
+                        padding: 10px 25px;
+                        background-color: $primaryColor;
+                        border-radius: 20px;
+                        font-size: 16px;
+                        line-height: 17px;
+                        font-weight: 500;
+                        color: $colorDark;
+                        transition: 0.5s all;
+
+                        &:hover {
+                            padding: 10px 35px;
+                            color: $tertiaryColor;
+                            //margin-left: 13px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cards {
+            .card-1 {
+                .bg-logo {
+                    overflow: hidden;
+                    img {
+                        width: 80%;
+                        border-radius: 40px;
+
+                        @media screen and (max-width: "992px") {
+                            width: 100%;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background-image: url("../images/logo_white.png");
+                        width: 20%;
+                        height: 40%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        top: 50%;
+                        left: 50%;
+                        opacity: 1;
+                        transform: scale(1) translate(0, -50%) rotate(25deg);
+                        transition: $transition;
+                        @media screen and (max-width: "992px") {
+                            left: 40%;
+                        }
+                    }
+                    
+                    &:hover {
+                        &::after {
+                            animation: scaleMe 3s infinite linear;
+                        }
+                    }
+                }
+            }
+
+            .card-2 {
+                
+                .trees-planted {
+                    padding: 30px 15px;
+                    background-color: $colorGrey;
+                    border-radius: 35px;
+                    font-size: 13px;
+                    line-height: 16px;
+                    transition: all 1.5s;
+                
+                    h5 {
+                        margin-bottom: 1rem;
+                    }
+
+                    @media screen and (min-width:"1024px") {
+                        position: absolute;
+                        bottom: 0;
+                        top: -150px;
+
+                        &:hover {
+                            top: -150px;
+                            transition: all 1s;
+                            padding: 150px 15px;
+                            z-index: 1;
+                        }
+                    }
+
+                }
+
+
+                .edu-programs {
+                    padding: 30px 15px;
+                    margin-top: 10px;
+                    background-color: $secondaryColor;
+                    border-radius: 35px 35px 35px 35px;
+                    font-size: 13px;
+                    line-height: 16px;
+                    margin-top: -30px;
+                    transition: all 1.5s;
+
+                    h5 {
+                        margin-bottom: 1rem;
+                    }
+
+                    @media screen and (min-width:"1024px") {
+                        position: absolute;
+                        top: 8px;
+                        z-index: 0;
+
+                        &:hover {
+                            top: -122px;
+                            transition: all 1s;
+                            padding: 90px 15px;
+                            z-index: 1;
+                        }
+                    }
+                }
+
+            }
+
+            .card-3 {
+                .share-results {
+                    img {
+                        width: 100%;
+                        border-radius: 40px;
+                    }
+
+                    .results-text {
+                        padding: 20px 20px;
+                        p {
+                            background-color: $colorLight;
+                            padding: 8px 10px;
+                            border-radius: 10px;
+                            font-size: 20px;
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+
+            .card-4 {
+                .donation-card {
+                    .card-4 {
+                        width: 100%;
+                        border-radius: 40px;
+                    }
+
+                    .cta-text {
+                        .links {
+                            top: 0;
+                            left: 8%;
+                            padding-top: 15px;
+                            width: 80%; 
+        
+                            a {
+                                padding: 5px 10px;
+                                border: 1px solid $tertiaryColor;
+                                border-radius: 20px;
+                                color: $tertiaryColor;
+                                transition: 0.5s all;
+                                font-weight: 500;
+                                margin: 5px;
+        
+                                &:hover {
+                                    background-color: #0a8f4d4a;
+                                }
+                            }
+                        } 
+        
+                        .donate {
+                            left: 5%;
+                            bottom: 20px;
+                            width: 90%;
+
+                            a {
+                                p {
+                                    background-color: $colorLight;
+                                    padding: 5px ;
+                                    border-radius: 10px;
+                                    font-size: 19px;
+                                    line-height: 28px;
+                                    text-align: center;
+        
+                                    img {
+                                        padding: 9px;
+                                        transition: 0.5s all;
+                                    }
+                                }
+        
+                                &:hover {
+                                    p {
+                                        img {
+                                            transition: 0.5s all;
+                                            transform: translate3d(5px, -5px, 10px);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            
+            .card-5 {
+                .environment-day {
+                    img {
+                        width: 80%;
+                        border-radius: 40px;
+
+                        @media screen and (max-width: "992px") {
+                            width: 100%;
+                        }
+                    }
+
+                    .nature-day {
+                        p {
+                            width: 80%;
+                            font-size: 19px;
+                            line-height: 23px;
+                            font-weight: 500;
+                            color: #115011;
+
+                            @media screen and (max-width: "992px") {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.marquee {
+    background-color: $secondaryColor;
+    color: #033403;
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .marquee-inner {
+       width: max-content; // or remove fixed width entirely
+
+        .marquee-part {
+            flex: none; // don't shrink or stretch
+            padding-right: 2rem;
+
+            .marquee-sun {
+                animation: rotateSun 2.5s infinite linear;
+            }
+        }
+    }
+}

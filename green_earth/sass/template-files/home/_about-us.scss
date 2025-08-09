@@ -1,0 +1,70 @@
+.about-us {
+    .background {
+        .intro {
+            p {
+                width: 100%;
+                color: $colorDarkGrey;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+    
+                @media screen and (min-width:"992px") {
+                    width: 60%;
+                }
+            }
+        }
+    
+        .campaigns {
+            background-color: rgba(255, 255, 255, 0.725) ;
+            border-radius: 20px;
+
+            @media screen and (min-width:"992px") {
+                width: 39%;
+            }
+
+            h1 {
+                font-weight: 600;
+            }
+    
+            .ctas {
+                .about-us-link {
+    
+                    a {
+                        padding: 8px 25px;
+                        background-color: $primaryColor;
+                        border-radius: 20px;
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: 500;
+                        color: $tertiaryColor;
+                        transition: 0.5s all;
+                        display: inline-block;
+                    }    
+    
+                    &:hover {
+                        a {
+                            color:#69a455;
+                            transition: 0.5s all;
+                        }
+                    }
+                }
+    
+                .campaigns {
+    
+                    i {
+                        padding: 9px;
+                        transition: 0.5s all;
+                    }
+    
+                    &:hover {
+                        i {
+                            transition: 0.5s all;
+                            transform: translate3d(8px, 0px, 10px);
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.faq {
+    .faq-title {
+        h2 {
+            font-weight: bold;
+            img {
+                width: 20px;
+                margin-left: 10px;
+                margin-bottom: 5px;
+                transition: 0.5s all;
+            }
+        }
+
+        &:hover {
+            h2 {
+                img {
+                    transition: 0.5s all;
+                    transform: translate3d(5px, -5px, 10px);
+                }
+            }
+        }
+    }
+
+    .faq-info {
+        p {
+            width: 100%;
+            color: $colorDarkGrey;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    .accordion {
+        .accordion-item {
+            background-color: $colorGrey;
+            border-radius: 20px;
+            transition: all 0.5s;
+
+            .accordion-header {
+                transition: all 0.5s;
+                h3 {
+                    margin-bottom: 0rem;
+                }
+
+                .dropdown {
+                    span {
+                        padding: 20px; 
+                        display: flex;
+                        
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 20px;
+                            height: 3px;
+                            background-color: #058b03;
+                            border-radius: 10px;
+                            top: 50%;
+                            bottom: 50%;
+                            right: 10px;
+                            transition: all 0.5s;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 20px;
+                            height: 3px;
+                            background-color: #058b03;
+                            border-radius: 10px;
+                            top: 50%;
+                            bottom: 50%;
+                            right: 10px;
+                            transform: rotate(90deg);
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+
+            .flush-collapseOne {
+                transition: all 0.5s;
+                overflow: hidden;
+                display: none;
+
+                p {
+                    line-height: 22px;
+                    transition: all 0.5s;
+                }
+
+                @media screen and (min-width:"768px") {
+                    padding-right: 33px;
+                }
+            }
+
+            &.active {
+                background-color: $primaryColor;
+                transition: all 0.5s;
+
+                .accordion-header {
+                    .dropdown {
+                        span {
+                            &::after {
+                                transition: all 0.5s;
+                                transform: rotate(0deg);
+                            }
+                        }
+                    }
+                }
+
+                .flush-collapseOne {
+                    display: block;
+                    
+                    p {
+                        padding-top: 13px;
+                        transition: all 0.5s;
+                    }
+                }
+            } 
+        }
+    }
+}

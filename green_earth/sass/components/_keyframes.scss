@@ -1,0 +1,47 @@
+@keyframes magicText {
+    0% {
+        color: #5f005e;
+        background-color: #e89be6;
+    }
+    40% {
+        color: #001563;
+        background-color: #abbaf6;
+    }
+    80% {
+        color: #2e0063;
+        background-color: #baabf6;
+    }
+    100% {
+        color: #5f005e;
+        background-color: #e89be6;
+    }
+}
+
+
+@keyframes scaleMe {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0, -50%) rotate(25deg);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(5) translate(50%, -50%) rotate(40deg);
+    }
+    55% {
+        opacity: 0;
+        transform: scale(0) translate(0, -50%) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(0, -50%) rotate(25deg);
+    }
+}
+
+@keyframes rotateSun {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
